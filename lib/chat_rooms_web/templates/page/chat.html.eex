@@ -1,0 +1,115 @@
+<div id="app">
+  <div id="chat_list">
+    <div id="chat_list_button">
+      Create new chat room
+    </div>
+    <ul>
+      <li class="chat_list_item"><span>Room #1 <span class="small">Joined</span></span> <span class="badge badge-primary badge-pill">14</span></li>
+      <li class="chat_list_item"><span>Room #1 <span class="small"></span></span> <span class="badge badge-primary badge-pill">14</span></li>
+      <li class="chat_list_item"><span>Room #1 <span class="small"></span></span> <span class="badge badge-primary badge-pill">14</span></li>
+      <li class="chat_list_item"><span>Room #1 <span class="small">Joined</span></span> <span class="badge badge-primary badge-pill">14</span></li>
+      <li class="chat_list_item"><span>Room #1 <span class="small">Joined</span></span> <span class="badge badge-primary badge-pill">14</span></li>
+      <li class="chat_list_item"><span>Room #1 <span class="small">Joined</span></span> <span class="badge badge-primary badge-pill">14</span></li>
+    </ul>
+    <a href="#" id="chat_logout">Logout</a>
+  </div>
+  <div id="chat_frame">
+    <div id="chat_infobar"><span>Room #1</span> <button>Leave channel</button></div>
+    <div id="chat_body">
+      <div class="message message-received">
+        <small>13:37 <span class="message-sender">User Numer:</span></small>
+        <span>Message</span>
+      </div>
+      <div class="message message-sent">
+        <small>13:37 <span class="message-sender">User Numer:</span></small>
+        <span>Message</span>
+      </div>
+      <div class="message message-received">
+        <small>13:37 <span class="message-sender">User Numer:</span></small>
+        <span>Message</span>
+      </div>
+      <div class="message message-received">
+        <small>13:37 <span class="message-sender">User Numer:</span></small>
+        <span>Message</span>
+      </div>
+      <div class="message message-received">
+        <small>13:37 <span class="message-sender">User Numer:</span></small>
+        <span>Message</span>
+      </div>
+      <div class="message message-received">
+        <small>13:37 <span class="message-sender">User Numer:</span></small>
+        <span>Message</span>
+      </div>
+      <div class="message message-received">
+        <small>13:37 <span class="message-sender">User Numer:</span></small>
+        <span>Message</span>
+      </div>
+      <div class="message message-received">
+        <small>13:37 <span class="message-sender">User Numer:</span></small>
+        <span>Message</span>
+      </div>
+      <div class="message message-received">
+        <small>13:37 <span class="message-sender">User Numer:</span></small>
+        <span>Message</span>
+      </div>
+      <div class="message message-received">
+        <small>13:37 <span class="message-sender">User Numer:</span></small>
+        <span>Message</span>
+      </div>
+      <div class="message message-received">
+        <small>13:37 <span class="message-sender">User Numer:</span></small>
+        <span>Message</span>
+      </div>
+      <div class="message message-received">
+        <small>13:37 <span class="message-sender">User Numer:</span></small>
+        <span>Message</span>
+      </div>
+      <div class="message message-received">
+        <small>13:37 <span class="message-sender">User Numer:</span></small>
+        <span>Message</span>
+      </div>
+      <div class="message message-received">
+        <small>13:37 <span class="message-sender">User Numer:</span></small>
+        <span>Message</span>
+      </div>
+      <div class="message message-received">
+        <small>13:37 <span class="message-sender">User Numer:</span></small>
+        <span>Message</span>
+      </div>
+      <div class="message message-received">
+        <small>13:37 <span class="message-sender">User Numer:</span></small>
+        <span>Message</span>
+      </div>
+      <div class="message message-received">
+        <small>13:37 <span class="message-sender">User Numer:</span></small>
+        <span>Message</span>
+      </div>
+      <div class="message message-received">
+        <small>13:37 <span class="message-sender">User Numer:</span></small>
+        <span>Message</span>
+      </div>
+      <div class="message message-received">
+        <small>13:37 <span class="message-sender">User Numer:</span></small>
+        <span>Message</span>
+      </div>
+      <div class="message message-received">
+        <small>13:37 <span class="message-sender">User Numer:</span></small>
+        <span>Message</span>
+      </div>
+      <div class="message message-received">
+        <small>13:37 <span class="message-sender">User Numer:</span></small>
+        <span>Message</span>
+      </div>
+      <div class="message message-received">
+        <small>13:37 <span class="message-sender">User Numer:</span></small>
+        <span>Message</span>
+      </div>
+    </div>
+    <div id="chat_form">
+      <input type="text" id="chat_input">
+      <button id="chat_send_button">Send</button>
+    </div>
+  </div>
+</div>
+
+<script src="<%= static_path(@conn, "/js/client.bundle.js") %>"></script>

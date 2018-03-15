@@ -1,0 +1,15 @@
+<div id="form">
+  <a href="#" id="form-link">Login</a>
+  <form action="#" method="post">
+    <input type="submit" id="form-title" value="Register">
+    </input>
+    <div id="form-inputs">
+      <input class="form-control" type="text" name="name" id="name" placeholder="Name (visible to others)">
+      <input class="form-control" type="text" name="email" id="email" placeholder="Email">
+      <input class="form-control" type="password" name="password" id="password" 
+        placeholder="Password">
+      <input class="form-control" type="password" name="password_confirmation" id="password_confirmation" 
+        placeholder="Password confirmation">
+    </div>
+  </form>
+</div>
