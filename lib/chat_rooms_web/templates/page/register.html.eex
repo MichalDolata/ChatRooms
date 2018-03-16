@@ -1,8 +1,8 @@
 <div id="form">
-  <a href="#" id="form-link">Login</a>
-  <form action="#" method="post">
-    <input type="submit" id="form-title" value="Register">
-    </input>
+  <a href="<%= page_path(@conn, :login) %>" id="form-link">Login</a>
+  <form action="<%= auth_path(@conn, :create) %>" method="post">
+    <%= form_tag("post") %>    
+    <input type="submit" id="form-title" value="Create account">
     <div id="form-inputs">
       <input class="form-control" type="text" name="name" id="name" placeholder="Name (visible to others)">
       <input class="form-control" type="text" name="email" id="email" placeholder="Email">
@@ -10,6 +10,7 @@
         placeholder="Password">
       <input class="form-control" type="password" name="password_confirmation" id="password_confirmation" 
         placeholder="Password confirmation">
+      <a href="<%= auth_path(@conn, :request, :facebook) %>" id="fb-button">Create account with Facebook</a>        
     </div>
   </form>
 </div>

@@ -6,7 +6,8 @@ defmodule ChatRooms.Accounts.Credentials.Email do
 
   schema "accounts_credentials_email" do
     field :email, :string
-    field :password, :string
+    field :password, :string, virtual: true
+    field :password_hash, :string
 
     belongs_to :user, User
 
@@ -14,9 +15,20 @@ defmodule ChatRooms.Accounts.Credentials.Email do
   end
 
   @doc false
-  def changeset(email, attrs) do
+  def changeset(email, attrs, user) do
     email
     |> cast(attrs, [:email, :password])
     |> validate_required([:email, :password])
+    |> unique_constraint(:email)
+    |> validate_confirmation(:password)
+    |> put_pass_hash()
+    |> put_assoc(:user, user)
+    |> IO.inspect
   end
+
+  defp put_pass_hash(%Ecto.Changeset{valid?: true, 
+    changes: %{password: password}} = changeset) do
+    change(changeset, Comeonin.Argon2.add_hash(password))
+  end
+  defp put_pass_hash(changeset), do: changeset
 end

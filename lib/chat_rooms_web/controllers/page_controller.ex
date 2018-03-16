@@ -1,10 +1,16 @@
 defmodule ChatRoomsWeb.PageController do
   use ChatRoomsWeb, :controller
+  alias ChatRoomsWeb.Helpers.Auth
+
+  plug ChatRoomsWeb.RequireLogin when action in [:chat]
+  plug ChatRoomsWeb.RequireGuest when action in [:login, :register]
 
   def index(conn, _params) do
-    case true do
+    case Auth.is_logged_in?(conn) do
       true ->
         redirect(conn, to: page_path(conn, :chat))
+      false ->
+        redirect(conn, to: page_path(conn, :login))
     end
   end
 

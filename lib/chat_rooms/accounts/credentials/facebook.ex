@@ -12,9 +12,11 @@ defmodule ChatRooms.Accounts.Credentials.Facebook do
   end
 
   @doc false
-  def changeset(facebook, attrs) do
+  def changeset(facebook, attrs, user) do
     facebook
     |> cast(attrs, [:fb_id])
     |> validate_required([:fb_id])
+    |> unique_constraint(:fb_id)
+    |> put_assoc(:user, user)
   end
 end

@@ -11,7 +11,7 @@
       <li class="chat_list_item"><span>Room #1 <span class="small">Joined</span></span> <span class="badge badge-primary badge-pill">14</span></li>
       <li class="chat_list_item"><span>Room #1 <span class="small">Joined</span></span> <span class="badge badge-primary badge-pill">14</span></li>
     </ul>
-    <a href="#" id="chat_logout">Logout</a>
+    <%= link("Logout", to: auth_path(@conn, :logout), method: :delete, id: "chat_logout") %>
   </div>
   <div id="chat_frame">
     <div id="chat_infobar"><span>Room #1</span> <button>Leave channel</button></div>

@@ -1,13 +1,15 @@
 <div id="form">
-  <a href="#" id="create-account-link">Create account</a>
+  <a href="<%= page_path(@conn, :register) %>" id="form-link">Create account</a>
   
-  <form action="#" method="post">
+  <form action="<%= auth_path(@conn, :login) %>" method="post">
+    <%= form_tag("post") %>
     <input type="submit" id="form-title" value="Login">
     </input>
     <div id="form-inputs">
       <input class="form-control" type="text" name="email" id="email" placeholder="Email">
       <input class="form-control" type="password" name="password" id="password" 
         placeholder="Password">
+      <a href="<%= auth_path(@conn, :request, :facebook) %>" id="fb-button">Login with Facebook</a>
     </div>
   </form>
 </div>

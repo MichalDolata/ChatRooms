@@ -8,5 +8,6 @@ defmodule ChatRooms.Repo.Migrations.CreateAccountsUsers do
       timestamps()
     end
 
+    create unique_index(:accounts_users, [:name])
   end
 end

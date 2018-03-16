@@ -7,8 +7,8 @@ defmodule ChatRooms.Accounts.User do
   schema "accounts_users" do
     field :name, :string
 
-    has_one :credential_email, Credentials.Email
-    has_one :credential_fb, Credentials.Facebook
+    has_one :credentials_email, Credentials.Email
+    has_one :credentials_fb, Credentials.Facebook
 
     timestamps()
   end
@@ -18,5 +18,6 @@ defmodule ChatRooms.Accounts.User do
     user
     |> cast(attrs, [:name])
     |> validate_required([:name])
+    |> unique_constraint(:name)
   end
 end
