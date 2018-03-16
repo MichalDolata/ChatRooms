@@ -1,0 +1,2 @@
+<%= tag :meta, name: "socket_token",
+               content: Phoenix.Token.sign(@conn, "socket_auth", @current_user.id) %>
