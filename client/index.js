@@ -1,23 +1,32 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+
+import { Provider } from 'react-redux'
+import { createStore, combineReducers, applyMiddleware } from 'redux'
+import thunk from 'redux-thunk'
+import { composeWithDevTools } from 'redux-devtools-extension';
+
+import rootReducer from './reducers'
+import { initializeConnection } from './actions/session'
+import App from './containers/app'
+
 import 'phoenix_html'
-import { Socket } from 'phoenix'
 
 import style from './style/style.scss'
 
-const token = document.head.querySelector("[name=socket_token]").content
-let socket = new Socket("/socket", {params: {token}})
-socket.connect()
+const store = createStore(
+  rootReducer,
+  composeWithDevTools(applyMiddleware(thunk))
+)
 
-let lobby = socket.channel("room:lobby")
-lobby.join()
-  .receive("ok", (message) => console.log(message))
-// ReactDOM.render(
-//   <div>
-//     TEST
-//   </div>,
-//   document.getElementById('app')
-// )
+store.dispatch(initializeConnection())
+
+ReactDOM.render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById('app')
+)
 
 // <ChatApp>
 //   <ChatList>
