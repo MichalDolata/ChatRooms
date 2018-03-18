@@ -1,5 +1,5 @@
 import { SET_SESSION } from '../constants'
-import { setRooms } from './rooms'
+import { setRooms, addRoom } from './rooms'
 import { Socket } from 'phoenix'
 
 export const initializeConnection = () => (dispatch) => {
@@ -8,6 +8,10 @@ export const initializeConnection = () => (dispatch) => {
   socket.connect()
 
   const lobby = socket.channel("room:lobby")
+  lobby.on("new_room", (room) => {
+    dispatch(addRoom(room))
+  })
+
   lobby.join()
     .receive("ok", ({currentUser, rooms}) => {
       dispatch({

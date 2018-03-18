@@ -26,14 +26,19 @@ const rooms = (state = initialState, action) => {
       })
       break
     case ADD_ROOM:
-      return [
-        ...state,
-        {
-          ...action.room,
-          channel: null,
-          messages: []
+      if(state.findIndex((room) => 
+        room.id == action.room.id) == -1) {
+          return [
+            ...state,
+            {
+              ...action.room,
+              channel: null,
+              messages: []
+            }
+          ]
+        } else {
+          state
         }
-      ]
       break
     case REMOVE_ROOM:
       return state.filter((room) => {

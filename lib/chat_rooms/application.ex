@@ -14,7 +14,7 @@ defmodule ChatRooms.Application do
       supervisor(ChatRoomsWeb.Endpoint, []),
       # Start your own worker by calling: ChatRooms.Worker.start_link(arg1, arg2, arg3)
       # worker(ChatRooms.Worker, [arg1, arg2, arg3]),
-      worker(ChatRoomsWeb.RoomChannel.Monitor, [%{channels: %{}}])
+      worker(ChatRoomsWeb.RoomChannel.Monitor, [%{:last_id => 0, :rooms => %{}}])
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
