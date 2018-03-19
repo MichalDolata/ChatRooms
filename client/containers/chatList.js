@@ -12,6 +12,7 @@ class ChatList extends Component {
 
     this.handleClick = this.handleClick.bind(this)
     this.handleCreate = this.handleCreate.bind(this)
+    this.csrf = document.head.querySelector('[name=csrf-token]').content 
   }
 
   handleClick(id) {
@@ -44,7 +45,7 @@ class ChatList extends Component {
               ))
             }
           </ul>
-          <a data-csrf="PC0tGSk9fVIeO1lCeE4PATFqSTRNJgAArjWqGm33vC1sL+fpE3yE4A==" data-method="delete" data-to="/logout" href="#" id="chat_logout" rel="nofollow">Logout</a>
+          <a data-csrf={this.csrf} data-method="delete" data-to="/logout" href="#" id="chat_logout" rel="nofollow">Logout</a>
       </div>
     )
   }

@@ -5,8 +5,8 @@ class ChatListItem extends Component {
     const { name, users, onClick, isJoinned } = this.props
     return (
       <li className="chat_list_item" onClick={onClick}>
-        <span>{name} {isJoinned && <small>(Joined)</small>}</span> 
-        <span className="badge badge-primary badge-pill">{users}</span>
+      <span>{name}</span> 
+      {isJoinned && <span className="badge badge-primary badge-pill">Joined</span>}
       </li>
     )
   }

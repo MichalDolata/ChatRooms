@@ -60,7 +60,7 @@ export const addRoom = (room) => {
 }
 
 export const createRoom = (socket, lobby, name) => (dispatch) => {
-  lobby.push("new_room", {name}).
+  lobby.push("create_room", {name}).
     receive("ok", (room) => {
       dispatch(addRoom(room)),
       dispatch(joinRoom(socket, room.id))

@@ -8,7 +8,8 @@ class ChatMessage extends Component {
     const classes = `message message-${type}`
     return (
       <div className={classes}>
-        <small>{time.toTimeString().split(' ')[0].split(':').slice(0, -1).join(':')} <span className="message-sender">{message.user.name}: </span></small>
+        <small>{time.toTimeString().split(' ')[0].split(':').slice(0, -1).join(':')} 
+          <span className="message-sender">{message.user.name}: </span></small>
         <span>{message.message}</span>
       </div>
     )

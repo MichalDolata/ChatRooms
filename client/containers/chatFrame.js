@@ -34,7 +34,9 @@ class ChatFrame extends Component {
           <ChatBody />
           <ChatForm sendMessage={this.sendMessage} />
         </Fragment>) : 
-        (<div></div>)
+        (<div id="welcome_text">
+          <span>Choose or create room</span>
+        </div>)
         }
       </div>
     )

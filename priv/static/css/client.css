@@ -6043,6 +6043,9 @@ a.text-dark:focus, a.text-dark:hover {
 body {
   overflow-y: hidden; }
 
+button {
+  cursor: pointer; }
+
 #app {
   height: 100vh;
   flex-grow: 1;
@@ -6119,7 +6122,8 @@ body {
       align-self: flex-end;
       border-color: #007bff; }
     #chat_frame #chat_body .message-sender {
-      font-size: 1.2em; }
+      font-size: 1.2em;
+      margin-left: 4px; }
   #chat_frame #chat_form {
     border-top: 1px solid #007bff;
     min-height: 47px;
@@ -6179,3 +6183,12 @@ body {
   #fb-button:hover {
     background-color: #006fe6;
     text-decoration: none; }
+
+#welcome_text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%; }
+  #welcome_text span {
+    font-size: 3rem;
+    color: rgba(168, 164, 164, 0.5); }

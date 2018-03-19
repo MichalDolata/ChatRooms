@@ -13,27 +13,42 @@ defmodule ChatRoomsWeb.RoomChannel.Monitor do
       %{
         name: room.name,
         id: room.id,
-        users: room.users
       }
     end)
   end
 
   def create_room(name) do
+    # check if exists
+    name = name |> String.trim()
+
     new_room = %{
       id: 0, 
       name: name, 
-      users: 0,
       messages: []
     }
 
-    Agent.get_and_update(__MODULE__, fn state ->
-      id = state[:last_id] + 1
-      new_room = %{new_room | id: id}
+    # TODO: check if empty
 
-      state = state
-      |> Map.put(:last_id, id)
-      |> put_in([:rooms, id], new_room)
-      {new_room, state}
+    Agent.get_and_update(__MODULE__, fn state ->
+      index = state
+      |> Map.fetch!(:rooms)
+      |> Enum.find_index(fn {_k, room} ->
+        room.name == name
+      end)
+
+      case index do
+        nil ->
+          id = state[:last_id] + 1
+          new_room = %{new_room | id: id}
+    
+          state = state
+          |> Map.put(:last_id, id)
+          |> put_in([:rooms, id], new_room)
+          
+          {new_room, state}
+        _ ->
+          {:error, state}
+        end
     end)
   end
 
