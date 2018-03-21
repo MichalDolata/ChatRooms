@@ -4,6 +4,7 @@
     <%= form_tag("post") %>    
     <input type="submit" id="form-title" value="Create account">
     <div id="form-inputs">
+      <%= render @view_module, "alerts.html", assigns %>
       <input class="form-control" type="text" name="name" id="name" placeholder="Name (visible to others)">
       <input class="form-control" type="text" name="email" id="email" placeholder="Email">
       <input class="form-control" type="password" name="password" id="password" 

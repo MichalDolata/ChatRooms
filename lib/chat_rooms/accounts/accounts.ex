@@ -23,8 +23,8 @@ defmodule ChatRooms.Accounts do
     case get_email_credentials(params) do
       {:ok, %Credentials.Email{} = credentials} ->
         {:ok, credentials.user}
-      {:error, message} ->
-        IO.inspect(message)
+      {:error, _message} ->
+        {:error, "Invalid credentials"}
     end
   end
 

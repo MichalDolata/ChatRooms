@@ -20,6 +20,7 @@ defmodule ChatRoomsWeb.RoomChannel do
       %{} = room ->
         messages = room
         |> Map.fetch!(:messages)
+        |> Enum.reverse()
         {:ok, %{messages: messages}, socket}
       nil ->
         {:error, %{error: "Invalid room"}}

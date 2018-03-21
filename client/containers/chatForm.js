@@ -23,9 +23,9 @@ class ChatForm extends Component {
 
   render() {
     return (
-      <form id="chat_form" onSubmit={this.handleSubmit}>
+      <form id="chat_form" onSubmit={this.handleSubmit} autoComplete="off">
         <input type="text" id="chat_input" value={this.state.message} onChange={this.handleChange} />
-        <button id="chat_send_button">Send</button>
+        <button id="chat_send_button">Send</button> 
       </form>
     )
   }

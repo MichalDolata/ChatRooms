@@ -44,7 +44,9 @@ defmodule ChatRooms.Mixfile do
       {:ueberauth, "~> 0.5.0"},
       {:comeonin, "~> 4.0"},
       {:argon2_elixir, "~> 1.2"},
-      {:ueberauth_facebook, "~> 0.7"}
+      {:ueberauth_facebook, "~> 0.7"},
+      {:distillery, "~> 1.5", runtime: false},
+      {:conform, "~> 2.5"}
     ]
   end
 

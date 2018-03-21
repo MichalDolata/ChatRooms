@@ -1,5 +1,4 @@
 defmodule ChatRoomsWeb.RequireLogin do
-  import Plug.Conn
   import ChatRoomsWeb.Router.Helpers
   import Phoenix.Controller
 

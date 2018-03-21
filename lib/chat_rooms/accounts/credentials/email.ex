@@ -19,11 +19,11 @@ defmodule ChatRooms.Accounts.Credentials.Email do
     email
     |> cast(attrs, [:email, :password])
     |> validate_required([:email, :password])
+    |> validate_format(:email, ~r/@/)
     |> unique_constraint(:email)
     |> validate_confirmation(:password)
     |> put_pass_hash()
     |> put_assoc(:user, user)
-    |> IO.inspect
   end
 
   defp put_pass_hash(%Ecto.Changeset{valid?: true, 

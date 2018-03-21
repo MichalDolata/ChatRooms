@@ -1,5 +1,4 @@
 defmodule ChatRoomsWeb.RequireGuest do
-  import Plug.Conn
   import ChatRoomsWeb.Router.Helpers
   import Phoenix.Controller
 

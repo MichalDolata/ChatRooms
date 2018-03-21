@@ -6169,9 +6169,10 @@ button {
       background-color: #006fe6; }
   #form #form-inputs {
     max-width: 500px;
-    margin: 0 auto; }
+    margin: 0 auto;
+    padding-top: 20px; }
     #form #form-inputs input {
-      margin: 20px 0; }
+      margin-bottom: 20px; }
 
 #fb-button {
   display: block;

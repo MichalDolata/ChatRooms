@@ -6,6 +6,7 @@
     <input type="submit" id="form-title" value="Login">
     </input>
     <div id="form-inputs">
+      <%= render @view_module, "alerts.html", assigns %>
       <input class="form-control" type="text" name="email" id="email" placeholder="Email">
       <input class="form-control" type="password" name="password" id="password" 
         placeholder="Password">
