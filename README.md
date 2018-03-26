@@ -1,19 +1,10 @@
 # ChatRooms
 
-To start your Phoenix server:
+ChatRooms is a message app which allows users to communicate within rooms. 
 
-  * Install dependencies with `mix deps.get`
-  * Create and migrate your database with `mix ecto.create && mix ecto.migrate`
-  * Start Phoenix endpoint with `mix phx.server`
+- User have to authenticate via FB account or email address. 
+- Rooms can be created by users. 
+- Server provides last 10 messages while user is joining the room. 
+- Communication is handled using WebSockets.
 
-Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
-
-Ready to run in production? Please [check our deployment guides](http://www.phoenixframework.org/docs/deployment).
-
-## Learn more
-
-  * Official website: http://www.phoenixframework.org/
-  * Guides: http://phoenixframework.org/docs/overview
-  * Docs: https://hexdocs.pm/phoenix
-  * Mailing list: http://groups.google.com/group/phoenix-talk
-  * Source: https://github.com/phoenixframework/phoenix
+[Online version](https://chatrooms.dolata.me)
